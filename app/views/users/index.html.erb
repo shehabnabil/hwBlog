@@ -1,8 +1,7 @@
 <h1>Home Page</h1>
 	<% @users.each do |user| %>
-<p>
-		<%= "#{user.fname} #{user.lname}" %>
-</p>
-	<%= link_to "user", user_path(user.id) %>
+		<p>
+			<%= link_to "#{user.fname} #{user.lname}", user_path(user.id) %>
+		</p>
 	<% end %>
 
