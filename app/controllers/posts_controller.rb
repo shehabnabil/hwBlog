@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	def index
+		@posts = Post.all
 
 	end
 
@@ -14,6 +15,12 @@ class PostsController < ApplicationController
 	def destroy
 
 	end
+
+	def show
+
+		@post = Post.find params[:id]
+		
+	end	
 
 
 

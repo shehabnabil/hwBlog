@@ -1,1 +1,29 @@
 <h1> Logged in User's Posts index page</h1>
+
+<p id="linkGroup">
+	<% if !session[:user_id].nil? %>
+			<%= link_to "Logout", logout_path, method: :delete %>
+	<% else %>
+		<%= link_to "Login", login_path %> 
+	<% end %>
+	</p>
+<hr>
+
+<% @posts.each do |post| %>   
+	<h2 class="posTitle">
+		<%= link_to "#{post.title}", post_path(post.id) %>
+	</h2>
+
+	<% if post.user.nil? %>
+		<%=  "by nil user" %>
+	<% else %>	
+		<p class="byline">
+			<%=  "by #{post.user.fname} #{post.user.lname}" %>
+		</p>
+	<% end %>
+	
+	<p class="post">
+		<%= "#{post.body}" %>
+	</p>
+	<hr>
+<% end %>
