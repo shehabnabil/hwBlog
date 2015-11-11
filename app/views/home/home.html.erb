@@ -1,0 +1,9 @@
+<h1>Admin Test Blog Landing Page</h1>
+
+<% if !session[:user_id].nil? %>
+	<%= link_to "Logout ", logout_path, method: :delete %>| Not A Member?
+	<%= link_to " Sign up!", new_user_path %>
+<% else %>
+	<%= link_to "Login", login_path %> | Not A Member?
+	<%= link_to " Sign up!", new_user_path %>
+<% end %>
