@@ -27,7 +27,6 @@
    <% if !session[:user_id].nil? %>
 		<%= link_to "Delete Post", post_path(post.id), method: :delete %> 
 		<%= link_to "Edit Post", edit_post_path(post.id) %>
-		<%= link_to "Comment", post_path(post.id) %> 
 	<% end %>
 	<hr>
 <% end %>

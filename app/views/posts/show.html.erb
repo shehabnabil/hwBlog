@@ -1,0 +1,7 @@
+<h1> <%= "#{@post.title}" %> </h1>
+<hn>
+<div class="post">
+	<%= "#{@post.body}" %>
+</div>
+<hr>
+<%= link_to "Back to Posts", user_path(session[:user_id]) %>
